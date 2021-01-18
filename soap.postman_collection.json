@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "5275a8c0-300c-473b-b0ad-449840044076",
+		"name": "soap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/SOAP.Demo.AddInteger",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml;charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <tem:AddInteger>\r\n         <!--Optional:-->\r\n         <tem:Arg1>1</tem:Arg1>\r\n         <!--Optional:-->\r\n         <tem:Arg2>2</tem:Arg2>\r\n      </tem:AddInteger>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.crcind.com:443/csp/samples/SOAP.Demo.cls",
+					"protocol": "https",
+					"host": [
+						"www",
+						"crcind",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"csp",
+						"samples",
+						"SOAP.Demo.cls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "node-soap-call",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <tem:AddInteger>\r\n         <!--Optional:-->\r\n         <tem:Arg1>7</tem:Arg1>\r\n         <!--Optional:-->\r\n         <tem:Arg2>2</tem:Arg2>\r\n      </tem:AddInteger>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/soapenv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"soapenv"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
